@@ -5,14 +5,8 @@ addons:
     packages:
     - luarocks
 
-env:
-  global:
-  - secure: "Hs+lDoU8n3mTbPTiNk3SWppeKRyAJIb9PuMYhPsxB17CFvcJanVWT3BHbsQyMY7j9FQ+ZFd3xCoEatEqeAZa+89FiI+AlOOKMbkLa+cj2ISIkA5OG9ELoFtLVhNyzUpuDYrEaodzkMtRlE8IF2oXc4tUdLI74RAkuyGN9dflJx5y4V+63m2GjjLEaAhjtDgDv8BYieOZ0LeXatviT9F5BCeHMgmaBglBfIiPU+jCC+gKeUZshK1UhWRqE2Vvh3eZJNZ7foqzzn3oyl/PQKabQCoK6yuDJc1w7+7KwPeL/LbjhGOMglNe6v65/XeKj2snsXhcA5JWGsDkxwsodl+L1fl3VFtznke4bxHzy/QppPq4BYgzR6AF6cLlMhNFpzZwmXZ6JsaXnUcIJTi/qTzRqSeQPLaxb1Eu27rN84RnvDQ2pAE76zpQSy9PnqHg9VrsGfXDiKcMZsMnBHvZluvEw1bjMubPrCblloE1nxhfOR+RlkST/XAEkfhLp69dvV1iKnx866JN3jg9IUswwVhN1ccSQw3Z+LpiXkYPARewhcgIprya+1mWJYSj4QP73pSoAnmJI65A+rjDeZ1zaSwLCOEtsIMrSQ/01nuNQNDJXwL/G/BKWGPV+oKzf3hTBwlxvvLNrnOhv7AChVK7d0wNjFfmJ/m/V1j21HHpW8B9PbE="
-
-before_install: luarocks install --local luacheck
-
+install: luarocks install --local luacheck
 before_script: $HOME/.luarocks/bin/luacheck . -qo 011
-
 script:
-  - echo "$TRAVIS_BRANCH - $TRAVIS_COMMIT - $TRAVIS_TAG - $TRAVIS_PULL_REQUEST - $TRAVIS_BUILD_DIR"
+  - echo "$TRAVIS_TYPE - $TRAVIS_BRANCH - $TRAVIS_COMMIT - $TRAVIS_TAG - $TRAVIS_PULL_REQUEST - $TRAVIS_BUILD_DIR"
   - curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash -s -- -l
