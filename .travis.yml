@@ -11,3 +11,7 @@ before_script: $HOME/.luarocks/bin/luacheck . -qo 011
 script:
   - echo "$TRAVIS_TYPE - $TRAVIS_BRANCH - $TRAVIS_COMMIT - $TRAVIS_TAG - $TRAVIS_PULL_REQUEST - $TRAVIS_BUILD_DIR"
   - curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash -s -- -l
+after_success:
+  - cat .release/TestGit/TestGit.toc
+  - cat .release/TestGit/TestGit.lua
+  - cat .release/TestGit/embeds.xml
