@@ -12,6 +12,7 @@ tools-used:
   - libdatabroker-1-1
 
 ignore:
+  - release-debug.sh
   - README.md
   - ISSUE_TEMPLATE.md
   - Libs/LibStub/tests
