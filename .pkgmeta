@@ -11,7 +11,7 @@ externals:
   Libs/LibDeflate:
     url: https://github.com/SafeteeWoW/LibDeflate.git
     curse-slug: libdeflate
-  Libs/LibItemID:
+  Libs/LibObjectiveProgress-1.0:
     url: https://repos.curseforge.com/wow/libobjectiveprogress-1-0
     type: hg
 
