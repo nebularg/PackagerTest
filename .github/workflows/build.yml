@@ -39,3 +39,8 @@ jobs:
         cat .release/TestGit/TestGit.toc
         cat .release/TestGit/TestGit.lua
         cat .release/TestGit/embeds.xml
+
+    - name: Action Test
+      uses: BigWigsMods/packager@master
+      with:
+        args: -l
