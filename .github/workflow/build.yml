@@ -1,0 +1,39 @@
+name: build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependancies
+      run: |
+        sudo apt-get install luarocks
+        luarocks install --local luacheck
+        wget -O ~/release.sh https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh
+        chmod +x ~/release.sh
+
+    - name: Run luacheck
+      run: ~/.luarocks/bin/luacheck . -qo 011
+
+    - name: Env check
+      run: |
+        echo "$GITHUB_EVENT_NAME - $GITHUB_REF - $GITHUB_SHA - $GITHUB_HEAD_REF - $GITHUB_WORKSPACE"
+        jq . "$GITHUB_EVENT_PATH"
+
+    - name: Test Classic
+      run: |
+        ~/release.sh -l -g 1.13.2 -m .pkgmeta-classic
+        cat .release/TestGit/TestGit.toc
+        cat .release/TestGit/TestGit.lua
+        cat .release/TestGit/embeds.xml
+
+    - name: Test Retail
+      run: |
+        ~/release.sh -l
+        cat .release/TestGit/TestGit.toc
+        cat .release/TestGit/TestGit.lua
+        cat .release/TestGit/embeds.xml
