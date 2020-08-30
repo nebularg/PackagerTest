@@ -7,16 +7,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
       with:
-        fetch-depth: 50
+        fetch-depth: 0
 
     - name: Install dependancies
       run: |
-        sudo apt-get install luarocks
+        sudo apt-get install luarocks pandoc
         luarocks install --local luacheck
-        wget -O ~/release.sh https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh
-        chmod +x ~/release.sh
 
     - name: Run luacheck
       run: ~/.luarocks/bin/luacheck . -qo 011
@@ -26,21 +24,24 @@ jobs:
         echo "$GITHUB_EVENT_NAME - $GITHUB_REF - $GITHUB_SHA - $GITHUB_HEAD_REF - $GITHUB_WORKSPACE"
         jq . "$GITHUB_EVENT_PATH"
 
-    - name: Test Classic
+    - name: Package Classic
+      uses: nebularg/packager@actionfun
+      with:
+        args: -l -g 1.13.2 -m .pkgmeta-classic
+
+    - name: Dump Classic
       run: |
-        ~/release.sh -l -g 1.13.2 -m .pkgmeta-classic
         cat .release/TestGit/TestGit.toc
         cat .release/TestGit/TestGit.lua
         cat .release/TestGit/embeds.xml
 
-    - name: Test Retail
-      run: |
-        ~/release.sh -l
-        cat .release/TestGit/TestGit.toc
-        cat .release/TestGit/TestGit.lua
-        cat .release/TestGit/embeds.xml
-
-    - name: Action Test
-      uses: BigWigsMods/packager@master
+    - name: Package Retail
+      uses: nebularg/packager@actionfun
       with:
         args: -l
+
+    - name: Dump Retail
+      run: |
+        cat .release/TestGit/TestGit.toc
+        cat .release/TestGit/TestGit.lua
+        cat .release/TestGit/embeds.xml
