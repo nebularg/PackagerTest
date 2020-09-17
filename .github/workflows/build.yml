@@ -11,13 +11,9 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install dependancies
-      run: |
-        sudo apt-get install luarocks pandoc
-        luarocks install --local luacheck
-
-    - name: Run luacheck
-      run: ~/.luarocks/bin/luacheck . -qo 011
+    - uses: nebularg/actions-luacheck@master
+      with:
+        args: -qo 011
 
     - name: Env check
       run: |
