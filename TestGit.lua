@@ -34,6 +34,8 @@ local debug = true
 local alpha = true
 --@end-alpha@
 
+print(SomeFunc())
+
 --@do-not-package@
 local this_should_never_be_shown_in_a_package
 --@end-do-not-package@
