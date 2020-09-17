@@ -10,6 +10,11 @@
 ## Version: @project-version@
 ## X-Date: @project-date-iso@
 
+#@no-lib-strip@
 embeds.xml
+#@retail@
+Libs\LibDualSpec-1.0\LibDualSpec-1.0.lua
+#@end-retail@
+#@end-no-lib-strip@
 
 TestGit.lua
