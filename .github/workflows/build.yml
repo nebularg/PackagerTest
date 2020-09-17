@@ -13,7 +13,7 @@ jobs:
 
     - uses: nebularg/actions-luacheck@master
       with:
-        args: -qo 011
+        args: -o 011
 
     - name: Env check
       run: |
