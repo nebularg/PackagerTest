@@ -15,10 +15,6 @@ jobs:
       with:
         args: -o 011
 
-    - uses: nebularg/actions-luacheck@master
-      with:
-        config: https://raw.githubusercontent.com/BigWigs/BigWigs/master/.luacheckrc
-
     - name: Env check
       run: |
         echo "$GITHUB_EVENT_NAME - $GITHUB_REF - $GITHUB_SHA - $GITHUB_HEAD_REF - $GITHUB_WORKSPACE"
