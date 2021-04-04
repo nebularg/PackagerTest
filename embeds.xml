@@ -10,5 +10,10 @@
 <!--@retail@-->
 <Script file="Libs\LibDualSpec-1.0\LibDualSpec-1.0.lua"/>
 <!--@end-retail@-->
+<!--@non-retail@
+<Include file="Libs\LibClassicDurations\LibClassicDurations.xml"/>
+<Script file="Libs\LibClassicCasterino\LibClassicCasterino.lua"/>
+<Script file="Libs\LibClassicSpellActionCount-1.0\LibClassicSpellActionCount-1.0.lua"/>
+@end-retail@-->
 
 </Ui>
