@@ -21,9 +21,9 @@ jobs:
         jq . "$GITHUB_EVENT_PATH"
 
     - name: Package Classic
-      uses: nebularg/packager@actionfun
+      uses: nebularg/packager@metadata
       with:
-        args: -l -g 1.13.2 -m .pkgmeta-classic
+        args: -l -g classic -m .pkgmeta-classic
 
     - name: Dump Classic
       run: |
@@ -32,7 +32,7 @@ jobs:
         cat .release/TestGit/embeds.xml
 
     - name: Package Retail
-      uses: nebularg/packager@actionfun
+      uses: nebularg/packager@metadata
       with:
         args: -l
 
