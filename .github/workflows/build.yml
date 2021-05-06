@@ -22,7 +22,7 @@ jobs:
         jq . "$GITHUB_EVENT_PATH"
 
     - name: Package Classic
-      uses: nebularg/packager@metadata
+      uses: nebularg/packager@master
       with:
         args: -l -g classic -m .pkgmeta-classic
 
@@ -33,7 +33,7 @@ jobs:
         cat .release/TestGit/embeds.xml
 
     - name: Package Retail
-      uses: nebularg/packager@metadata
+      uses: nebularg/packager@master
       with:
         args: -l
 

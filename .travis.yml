@@ -9,11 +9,11 @@ install: luarocks install --local luacheck
 before_script: $HOME/.luarocks/bin/luacheck . -qo 011
 script:
   - echo "$TRAVIS_TYPE - $TRAVIS_BRANCH - $TRAVIS_COMMIT - $TRAVIS_TAG - $TRAVIS_PULL_REQUEST - $TRAVIS_BUILD_DIR"
-  - curl -s https://raw.githubusercontent.com/nebularg/packager/metadata/release.sh | bash -s -- -l -g classic -m .pkgmeta-classic
+  - curl -s https://raw.githubusercontent.com/nebularg/packager/master/release.sh | bash -s -- -l -g classic -m .pkgmeta-classic
   - cat .release/TestGit/TestGit.toc
   - cat .release/TestGit/TestGit.lua
   - cat .release/TestGit/embeds.xml
-  - curl -s https://raw.githubusercontent.com/nebularg/packager/metadata/release.sh | bash -s -- -l
+  - curl -s https://raw.githubusercontent.com/nebularg/packager/master/release.sh | bash -s -- -l
   - cat .release/TestGit/TestGit.toc
   - cat .release/TestGit/TestGit.lua
   - cat .release/TestGit/embeds.xml
