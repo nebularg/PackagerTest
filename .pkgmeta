@@ -1,5 +1,5 @@
 package-as: TestGit
-enable-nolib-creation: yes
+enable-nolib-creation: no
 
 externals:
   Libs/LibStub: svn://svn.wowace.com/wow/libstub/mainline/tags/1.0
