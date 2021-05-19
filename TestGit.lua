@@ -25,17 +25,6 @@ project-version: @project-version@
 
 --@localization(locale="deDE", format="lua_additive_table", handle-unlocalized="ignore")@
 
-local project = WOW_PROJECT_MAINLINE
---[===[@non-retail@
---@version-classic@
-project = WOW_PROJECT_CLASSIC
---@end-version-classic@
---@version-bc@
-project = WOW_PROJECT_BC
---@end-version-bc@
---@end-non-retail@]===]
-
-
 --@debug@
 local debug = true
 --@end-debug@

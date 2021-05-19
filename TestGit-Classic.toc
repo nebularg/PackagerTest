@@ -1,0 +1,18 @@
+## Interface: 11307
+## Title: TestGit!
+## Notes: Testing a Git checkout for packaging.
+## Author: Neb
+## Version: @project-version@
+## X-Date: @project-date-iso@
+
+## X-Curse-Project-ID: 13501
+## X-WoWI-ID: 11190
+
+#@no-lib-strip@
+embeds.xml
+Libs\LibClassicDurations\LibClassicDurations.xml
+Libs\LibClassicCasterino\LibClassicCasterino.lua
+Libs\LibClassicSpellActionCount-1.0\LibClassicSpellActionCount-1.0.lua
+#@end-no-lib-strip@
+
+TestGit.lua
