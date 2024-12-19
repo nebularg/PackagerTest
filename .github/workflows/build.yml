@@ -21,19 +21,8 @@ jobs:
         echo "$GITHUB_EVENT_NAME - $GITHUB_REF - $GITHUB_SHA - $GITHUB_HEAD_REF - $GITHUB_WORKSPACE"
         jq . "$GITHUB_EVENT_PATH"
 
-    - name: Package Classic
-      uses: nebularg/packager@master
-      with:
-        args: -l -g classic -m .pkgmeta-classic
-
-    - name: Dump Classic
-      run: |
-        cat .release/TestGit/TestGit.toc
-        cat .release/TestGit/TestGit.lua
-        cat .release/TestGit/embeds.xml
-
     - name: Package Retail
-      uses: nebularg/packager@master
+      uses: nebularg/packager@install-svn
       with:
         args: -l
 
