@@ -20,7 +20,7 @@ jobs:
     - name: Package Retail
       uses: nebularg/packager@install-svn
       with:
-        args: -l
+        args: -l -m .pkgmeta-libclassic
 
     - name: Dump Retail
       run: |
