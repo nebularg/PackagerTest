@@ -9,7 +9,7 @@
 ## X-WoWI-ID: 11190
 
 #@no-lib-strip@
-embeds.xml
+embeds-Classic.xml
 Libs\LibClassicDurations\LibClassicDurations.xml
 Libs\LibClassicCasterino\LibClassicCasterino.lua
 Libs\LibClassicSpellActionCount-1.0\LibClassicSpellActionCount-1.0.lua

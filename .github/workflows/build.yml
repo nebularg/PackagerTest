@@ -12,10 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - uses: nebularg/actions-luacheck@master
-      with:
-        args: -o 011
-
     - name: Env check
       run: |
         echo "$GITHUB_EVENT_NAME - $GITHUB_REF - $GITHUB_SHA - $GITHUB_HEAD_REF - $GITHUB_WORKSPACE"
@@ -28,6 +24,6 @@ jobs:
 
     - name: Dump Retail
       run: |
-        cat .release/TestGit/TestGit.toc
+        cat .release/TestGit/TestGit-Mainline.toc
         cat .release/TestGit/TestGit.lua
         cat .release/TestGit/embeds.xml

@@ -9,7 +9,7 @@
 ## X-WoWI-ID: 11190
 
 #@no-lib-strip@
-embeds.xml
+embeds-Classic.xml
 #@end-no-lib-strip@
 
 TestGit.lua
